@@ -1,1 +1,23 @@
 Return a pair from array in which sum matches
+
+
+function pairOfSum (arr, num){
+  let sortArr = [...new Set(arr)].sort((a,b) => a - b);
+  let initial = sortArr[0];
+  let final = sortArr[sortArr.length -1];
+  console.log(sortArr)
+  for(let i=1; i<sortArr.length; i++) {
+     console.log(initial, final)
+     if(initial + final < num) {
+         initial = sortArr[i]
+     } else if(initial + final > num) {
+         final = sortArr[sortArr.length - i+1]
+     } else {
+        return [initial, final]
+     }
+  }
+  return 'No pair match'
+}
+
+
+console.log(pairOfSum([7,8,9,5,2,0,13,6,6], 17));
