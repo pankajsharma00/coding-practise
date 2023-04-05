@@ -1,0 +1,9 @@
+1) How to remove duplicate from array ---
+
+const arr = [2,4,5,6,6,7,7,7,8]
+
+const newArr = [...new Set(arr)];
+
+2) How to sort array
+
+newArr.sort((a,b) => a -b);
