@@ -1,0 +1,26 @@
+const input1 = { a:1, b:2, c:3, d:10, e:12,};
+const input2 = {a:2, e:12, f:6, d:10, b:3};
+
+
+const checkCommon = (input1, input2) => {
+   // checking length of objects and running iteration accordingly
+   let newObj = {}
+   for(const key in input1) {
+    if (input1[key] === input2[key]) {
+       const obj = {[key] : input2[key]  };
+       newObj = {...newObj, ...obj}
+    }
+   }
+   return newObj;
+}
+
+
+const commonObj = checkCommon(input1, input2);
+
+console.log(commonObj);
+
+// NOTES::::::
+
+// Main to notice how to loop through object 
+
+// how to check existence of values
