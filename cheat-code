@@ -7,3 +7,16 @@ const newArr = [...new Set(arr)];
 2) How to sort array
 
 newArr.sort((a,b) => a -b);
+
+
+
+IF YOU WANT TO ADD TWO OBJCET VALUE IN JS WE CAN DO IT BY USING SPREAD OPERATOR:::
+
+
+for Example:
+
+const input1 = { a:1, b:2, c:3, d:10, e:12};
+
+let objtoLoop = {test: 2};
+
+objectLoop = {...objtoLoop, ...input1} -----> without spread opertor complete object will add on input1;
