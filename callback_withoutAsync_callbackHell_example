@@ -1,0 +1,51 @@
+/* One Problem we face in async code when we not used any async methods 
+
+for Example
+ */
+ 
+ 
+ console.log('Start'); //1
+ 
+ const getName = (name, callback) => {
+    setTimeout(() => {
+       console.log('Inside SetTimeOut'); //5
+        return callback(name);
+    }, 2000);
+ }
+ 
+ const getHobbies = (name, callback) => {
+    const hobbies = {'sonam' : ['cricket', 'football', 'music', 'dance'], 'pankaj': ['cricket', 'football', 'game', 'dance']};
+    setTimeout(() => {
+      console.log('Inside Hobbies SetTimeout');
+      callback(hobbies[name]);
+    }, 1000)
+ }
+ 
+ const getLearningTime = (hobbies, callback) => {
+    setTimeout(() => {
+    console.log('Inside TIme SetTimeout');
+        callback('15 days')
+    }, 1000);
+ }
+ 
+ // CHECK IT WHEN WE NOT USE CALLBAXK FUNCTION
+ //const name = getName('Sonam'); //2
+ 
+// console.log(name); 
+ //3 return Undefined because when it comes into this line value of name is undefined as we are getting response from async;
+
+// WE CAN RESOLVE BY USING CALL BACK
+
+const name1 = getName('sonam', (name1) => {
+    console.log(name1);
+     getHobbies(name1, (hobbies) => {
+         console.log(hobbies);
+         getLearningTime(hobbies, (message) => {
+             console.log(message)
+         })
+     })
+})
+
+//console.log('checkkkkkkkk',name1); //  IT will return undefined
+ 
+ console.log('End'); //4
