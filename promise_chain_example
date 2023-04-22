@@ -1,0 +1,38 @@
+ console.log('Start'); //1
+ 
+ const getName = (name) => new Promise ((resolve, reject) => {
+     setTimeout(() => {
+       console.log('Inside SetTimeOut'); //5
+       resolve(name);
+    }, 2000);
+ });
+ 
+ const getHobbies = (name) => new Promise((resolve, reject) => {
+    const hobbies = {'sonam' : ['cricket', 'football', 'music', 'dance'], 'pankaj': ['cricket', 'football', 'game', 'dance']};
+    setTimeout(() => {
+      console.log('Inside Hobbies SetTimeout');
+      resolve(hobbies[name]);
+    }, 1000)
+ });
+ 
+ const getLearningTime = (hobbies, callback) => new Promise ((resolve, reject) => {
+    setTimeout(() => {
+    console.log('Inside TIme SetTimeout');
+        reject('15 days');
+    }, 1000);
+ });
+ 
+
+getName('sonam').then((name) => {
+     console.log(name);
+     return getHobbies(name);
+}).then((hobbies) => {
+     console.log(hobbies);
+     return getLearningTime(hobbies);
+}).catch(error => {
+   console.log(error);
+}).finally(() => {
+    console.log('Cleaned UP')
+})
+ 
+ console.log('End'); //4
