@@ -20,3 +20,7 @@ const input1 = { a:1, b:2, c:3, d:10, e:12};
 let objtoLoop = {test: 2};
 
 objectLoop = {...objtoLoop, ...input1} -----> without spread opertor complete object will add on input1;
+
+
+
+3) WHILE USING REDUCE IT WILL ITERATE OVER ALL ELEMENT, MAP WILL RETURN  SAME ORIGINAL LENGTH OF ARRAY, FILTER CAN"T UPDATE ARRAY VALUES
