@@ -1,0 +1,46 @@
+/* 5) Given two strings, return true if they are anagrams of one another
+
+For example: Mary is an anagram of Army */
+
+
+
+const isAnagram = (string1, string2) => {
+  if(string1.length !== string2.length) {
+     return false;
+  }
+  
+  // 3rd solution
+   
+   const str1 = string1.toLowerCase().split('').sort().join(',');
+   const str2 = string2.toLowerCase().split('').sort().join(',');
+   console.log(str1, str2)
+   if(str1 === str2) {
+     return true
+   }
+   return false;
+  // 1st solution
+
+  /* let val = string1.split("");
+  for (let j =0; j<val.length; j++) {
+     console.log(string2[j], val.includes(string2[j]))
+     if(!val.includes(string2[j])) {
+        return false
+     }
+  }
+  return true; */
+  
+  // 2nd Solution
+  
+  // let stringObj = {};
+  
+  /* for (let j =0; j<string1.length; j++) {
+     stringObj[string1[j]] = j
+  }
+  
+  for(let i =0; i< string1.length; i++) {
+      if(!string2[i] in stringObj) {
+          return false; 
+      }
+  }
+  return true; */
+}
