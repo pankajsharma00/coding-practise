@@ -1,0 +1,19 @@
+//Creating a Tally with the Reduce Method In JavaScript​
+
+const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
+
+
+const tallyCount = (arr) => {
+ return arr.reduce((acc, curr) => {
+      if(acc[curr]) {
+          acc[curr] = acc[curr] + 1;
+      } else {
+         acc[curr] = 1;
+      }
+      return acc;
+ }, {})
+ 
+};
+
+
+console.log(tallyCount(fruitBasket))
