@@ -17,3 +17,28 @@ const tallyCount = (arr) => {
 
 
 console.log(tallyCount(fruitBasket))
+
+
+
+OR
+
+WE CAN ADD KEY AS variable value by putting it into array;
+
+
+//Creating a Tally with the Reduce Method In JavaScript​
+
+const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
+
+
+const tallyCount = (arr) => {
+ return arr.reduce((acc, curr) => {
+      if(acc[curr]) {
+          return { ...acc, [curr]: acc[curr] + 1};
+      }
+      return {...acc, [curr]: 1}
+ }, {})
+ 
+};
+
+
+console.log(tallyCount(fruitBasket))
