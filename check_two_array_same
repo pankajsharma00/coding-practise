@@ -1,0 +1,46 @@
+//User function Template for javascript
+
+Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
+Note : If there are repetitions, then counts of repeated elements must also be same for two array to be equal.
+
+Your Task:
+Complete check() function which takes both the given array and their size as function arguments and returns true if the arrays are equal else returns false.The 0 and 1 printing is done by the driver code.
+
+
+/**
+ * @param {number[]} A
+ * @param {number[]} B
+ * @param {number} N
+ * @returns {boolean}
+*/
+class Solution {
+    //Function to check if two arrays are equal or not.
+    check(A,B,N){
+        // code here
+        let Aobject = {};
+        for(let i =0; i<N; i++) {
+            if(Aobject[A[i]]) {
+                Aobject[A[i]] = Aobject[A[i]] + 1;
+            } else {
+                Aobject[A[i]] = 1;
+            }
+        }
+        let Bobject = {};
+        for(let i =0; i<N; i++) {
+            if(Bobject[B[i]]) {
+                Bobject[B[i]] = Bobject[B[i]] + 1;
+            } else {
+                Bobject[B[i]] = 1;
+            }
+        }
+        
+        for(let j =0; j<N; j++) {
+            if(Aobject[B[j]] !== Bobject[B[j]]) {
+                return false
+            }
+        }
+        // console.log(Aobject)
+        return true;
+    }
+    
+}
