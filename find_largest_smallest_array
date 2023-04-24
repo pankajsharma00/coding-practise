@@ -1,0 +1,18 @@
+//How do you find the largest and smallest number in an unsorted integer array? (solution)
+
+
+
+const findLargestAndSmallestNum = (arr) => {
+     let obj = {smallest: arr[0], largest: arr[0]}
+     for(let i=1; i<=arr.length; i++)  {
+         if(obj.smallest > arr[i]) {
+            obj['smallest'] = arr[i]
+         }
+         if(obj.largest < arr[i]) {
+            obj['largest'] = arr[i]
+         }
+     }
+     console.log(obj)
+};
+
+findLargestAndSmallestNum([3,4,2,9,12,11,18,26,5]);
