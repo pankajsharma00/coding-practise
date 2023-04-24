@@ -44,3 +44,34 @@ class Solution {
     }
     
 }
+
+
+
+//User function Template for javascript
+
+
+/**
+ * @param {number[]} A
+ * @param {number[]} B
+ * @param {number} N
+ * @returns {boolean}
+*/
+class Solution {
+    //Function to check if two arrays are equal or not.
+    check(A,B,N){
+        // code here
+        A.sort((a,b) => {
+            return a-b
+        });
+        B.sort((a,b) => a-b);
+       
+        for(let i=0; i<N;i++){
+            if(A[i] !== B[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+}
+
