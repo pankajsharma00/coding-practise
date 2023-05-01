@@ -1,0 +1,35 @@
+const cal = (input1, input2) => {
+    return input1 + input2;
+}
+
+
+
+const memoziation = (func) => {
+ 
+ let cache = {};
+ 
+ return (...args) => {
+    const n = `${args[0]}${args[1]}`;
+    if(n in cache) {
+        console.log('cache')
+       return cache[n];
+    }
+    const res = func(args[0], args[1]);
+     console.log('not cache')
+    cache[n] = res;
+    return res;
+ }
+ 
+
+}
+
+console.time()
+
+const check = memoziation(cal);
+
+console.log(check(4,5))
+console.time()
+console.log(check(5,5))
+console.time()
+console.log(check(4,5))
+console.time()
