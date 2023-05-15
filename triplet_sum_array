@@ -1,0 +1,33 @@
+/* 
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that 
+	i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+	Notice that the solution set must not contain duplicate triplets.
+*/
+
+const arr = [0, -1, 2, -3, 1];
+
+function tripletSum() {
+  let length = arr.length;
+  let sortArr = arr.sort();
+  let triplet = [];
+  for(let i=0; i<length; i++) {
+    for(let j=1; j<length; j++) {
+        if(arr[i] + arr[j] > 0) {
+           break;
+        }
+       for(let k=2; k<length; k++) {
+           if (arr[i] + arr[j] + arr[k] === 0) {
+                triplet.push([arr[i], arr[j], arr[k]]);
+                break;
+           } else if(arr[i] + arr[j] + arr[k] > 0) {
+                break;
+           }
+       }
+    }
+  }
+  
+  return triplet;
+}
+
+
+console.log(tripletSum())
